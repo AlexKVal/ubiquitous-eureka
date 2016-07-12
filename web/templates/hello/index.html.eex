@@ -1,3 +1,4 @@
 <div class="jumbotron">
   <h2>Hello World, from Phoenix!</h2>
+  <a href="<%= user_path(@conn, :index) %>">To the Post:index</a>
 </div>
