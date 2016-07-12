@@ -20,7 +20,33 @@ defmodule Tut.Router do
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
 
-    resources "/users", UserController
+    # nested routes
+    # "user" one-to-many "posts"
+    resources "/users", UserController do
+      resources "/posts", PostController
+    end
+    #
+    # user_post_path  GET     /users/:user_id/posts           Tut.PostController :index
+    # user_post_path  GET     /users/:user_id/posts/:id/edit  Tut.PostController :edit
+    # user_post_path  GET     /users/:user_id/posts/new       Tut.PostController :new
+    # user_post_path  GET     /users/:user_id/posts/:id       Tut.PostController :show
+    # user_post_path  POST    /users/:user_id/posts           Tut.PostController :create
+    # user_post_path  PATCH   /users/:user_id/posts/:id       Tut.PostController :update
+    #                 PUT     /users/:user_id/posts/:id       Tut.PostController :update
+    # user_post_path  DELETE  /users/:user_id/posts/:id       Tut.PostController :delete
+    #
+    # iex(1)> import Tut.Router.Helpers
+    # Tut.Router.Helpers
+    # iex(2)> alias Tut.Endpoint
+    # Tut.Endpoint
+    # iex(3)> user_post_path Endpoint, :show, 42, 17
+    # "/users/42/posts/17"
+    #
+    # iex(4)> user_post_path Endpoint, :index, 42, active: true
+    # "/users/42/posts?active=true"
+
+
+    # resources "/users", UserController
     #
     # it unfolds to the set of routes:
     #
@@ -33,7 +59,7 @@ defmodule Tut.Router do
     #            PUT     /users/:id         Tut.UserController :update
     # user_path  DELETE  /users/:id         Tut.UserController :delete
 
-    resources "/posts", PostController, only: [:index, :show]
+    # resources "/posts", PostController, only: [:index, :show]
     # =>
     # post_path  GET  /posts             Tut.PostController :index
     # post_path  GET  /posts/:id         Tut.PostController :show
