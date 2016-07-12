@@ -22,9 +22,9 @@ defmodule Tut.Router do
 
     # nested routes
     # "user" one-to-many "posts"
-    resources "/users", UserController do
-      resources "/posts", PostController
-    end
+    # resources "/users", UserController do
+    #   resources "/posts", PostController
+    # end
     #
     # user_post_path  GET     /users/:user_id/posts           Tut.PostController :index
     # user_post_path  GET     /users/:user_id/posts/:id/edit  Tut.PostController :edit
@@ -63,7 +63,19 @@ defmodule Tut.Router do
     # =>
     # post_path  GET  /posts             Tut.PostController :index
     # post_path  GET  /posts/:id         Tut.PostController :show
+
+    resources "/reviews", ReviewController
+    # review_path  GET  /reviews  Tut.ReviewController :index
   end
+
+  scope "/admin" do
+    pipe_through :browser
+
+    resources "/reviews", Tut.Admin.ReviewController
+  end
+  #
+  # review_path  GET  /admin/reviews  Tut.Admin.ReviewController :index
+
 
   # Other scopes may use custom stacks.
   # scope "/api", Tut do
