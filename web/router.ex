@@ -68,10 +68,11 @@ defmodule Tut.Router do
     # review_path  GET  /reviews  Tut.ReviewController :index
   end
 
-  scope "/admin", as: :admin do
+  scope "/admin", Tut.Admin, as: :admin do
     pipe_through :browser
 
-    resources "/reviews", Tut.Admin.ReviewController
+    resources "/users",   UserController
+    resources "/reviews", ReviewController
   end
   #
   # admin_review_path  GET  /admin/reviews  Tut.Admin.ReviewController :index
