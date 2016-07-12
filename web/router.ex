@@ -64,7 +64,7 @@ defmodule Tut.Router do
     # post_path  GET  /posts             Tut.PostController :index
     # post_path  GET  /posts/:id         Tut.PostController :show
 
-    resources "/reviews", ReviewController
+    # resources "/reviews", ReviewController
     # review_path  GET  /reviews  Tut.ReviewController :index
   end
 
@@ -81,5 +81,16 @@ defmodule Tut.Router do
   # Other scopes may use custom stacks.
   # scope "/api", Tut do
   #   pipe_through :api
+  # end
+
+  # pipeline :review_checks do
+  #   plug :ensure_authenticated_user
+  #   plug :ensure_user_owns_review
+  # end
+  #
+  # scope "/reviews", Tut do
+  #   pipe_through :review_checks
+  #
+  #   resources "/", ReviewController
   # end
 end
