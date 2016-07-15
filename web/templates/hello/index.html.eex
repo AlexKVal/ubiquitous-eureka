@@ -1,3 +1,6 @@
 <div class="jumbotron">
   <h2>Hello World, from Phoenix!</h2>
+  <p>Some message: <%= @message %></p>
+  <p>Some name: <%= @name %></p>
+  <p>Some default value: <%= @defvalue %></p>
 </div>
