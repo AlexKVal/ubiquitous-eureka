@@ -7,4 +7,8 @@ defmodule Tut.PageController do
     |> put_flash(:error, "Kinda we have an error.")
     |> render("index.html")
   end
+
+  def show(conn, %{"id" => id}) do
+    text conn, "Just id = #{id}"
+  end
 end
