@@ -10,7 +10,9 @@ defmodule Tut.HelloController do
   end
 
   def show(conn, %{"messenger" => value}) do
-    render conn, "show.html", messenger: value
+    conn
+    |> put_layout(false)
+    |> render "show.html", messenger: value
   end
 
   defp assign_defvalue(conn, value) do
