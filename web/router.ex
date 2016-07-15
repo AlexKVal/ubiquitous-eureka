@@ -19,7 +19,8 @@ defmodule Tut.Router do
 
     get "/", PageController, :index
     get "/show/:id", PageController, :show
-    get "/json/:id", PageController, :showjson
+    get "/json/:id", PageController, :show_json
+    get "/html/:id", PageController, :show_html
 
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show

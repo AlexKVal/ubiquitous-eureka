@@ -12,7 +12,20 @@ defmodule Tut.PageController do
     text conn, "Just id = #{id}"
   end
 
-  def showjson(conn, %{"id" => id}) do
+  def show_json(conn, %{"id" => id}) do
     json conn, %{id: id, some: :data, text_data: "some text", num: 32}
+  end
+
+  def show_html(conn, %{"id" => id}) do
+    html conn, """
+    <html>
+      <head>
+        <title>Passing an Id</title>
+      </head>
+      <body>
+        <p>id = #{id}</p>
+      </body>
+    </html>
+    """
   end
 end
