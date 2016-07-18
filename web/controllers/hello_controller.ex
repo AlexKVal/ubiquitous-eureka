@@ -6,6 +6,7 @@ defmodule Tut.HelloController do
   def index(conn, _params) do
     conn
     |> assign(:name, "John Doe")
+    |> put_layout("admin.html")
     |> render("index.html", message: "A message from Page controller")
   end
 
