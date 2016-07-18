@@ -5,7 +5,7 @@ defmodule Tut.PageController do
     conn
     |> put_flash(:info, "Welcome to Phoenix, from flash info!")
     |> put_flash(:error, "Kinda we have an error.")
-    |> render("index.html")
+    |> render(:index)
   end
 
   def show(conn, %{"id" => id}) do

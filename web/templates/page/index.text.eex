@@ -1,0 +1,8 @@
+And this is a text template.
+
+This is INFO flash message:
+<%= get_flash(@conn, :info) %>
+
+
+This is ERROR flash message:
+<%= get_flash(@conn, :error) %>
