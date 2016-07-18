@@ -25,6 +25,10 @@ defmodule Tut.Router do
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
 
+    # for redirects
+    get "/redirect", PageController, :redirect_page
+    get "/redirect_test", PageController, :redirect_test, as: :redirect_test
+
     # nested routes
     # "user" one-to-many "posts"
     # resources "/users", UserController do

@@ -7,8 +7,9 @@
   <div class="col-lg-6">
     <h4>Help</h4>
     <ul>
-      <li><a href="http://localhost:4000/?_format=text">Go to the text version of this page</a></li>
-      <li><a href="http://localhost:4000/?_format=text&message=some_message">Text version with an additional message</a></li>
+      <li><a href="/?_format=text">Go to the text version of this page</a></li>
+      <li><a href="/?_format=text&message=some_message">Text version with an additional message</a></li>
+      <li><a href="/redirect">Test redirection mechanics</a></li>
     </ul>
   </div>
 </div>

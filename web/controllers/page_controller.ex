@@ -5,6 +5,7 @@ defmodule Tut.PageController do
     conn
     |> put_flash(:info, "Welcome to Phoenix, from flash info!")
     |> put_flash(:error, "Kinda we have an error.")
+    |> put_status(:accepted) # 202
     |> render(:index, message: params["message"])
   end
 
@@ -27,5 +28,21 @@ defmodule Tut.PageController do
       </body>
     </html>
     """
+  end
+
+  def redirect_page(conn, _params) do
+    redirect conn, to: "/redirect_test"
+
+    # or by using a path helper
+    # redirect conn, to: redirect_test_path(conn, :redirect_test)
+
+    # but a url helper will fail
+    # redirect conn, to: redirect_test_url(conn, :redirect_test)
+    # but it can be done like that
+    # redirect conn, external: redirect_test_url(conn, :redirect_test)
+  end
+
+  def redirect_test(conn, _params) do
+    text conn, "It is redirected! Yeah :)"
   end
 end
