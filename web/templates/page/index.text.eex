@@ -1,4 +1,7 @@
 And this is a text template.
+<%= if @message do %>
+A message parameter: <%= @message %>
+<% end %>
 
 This is INFO flash message:
 <%= get_flash(@conn, :info) %>
