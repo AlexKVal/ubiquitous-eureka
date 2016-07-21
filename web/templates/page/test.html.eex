@@ -5,7 +5,7 @@
 
   <ol class="list-group">
   <%= for key <- connection_keys @conn do %>
-    <%= render "key.html", key: key %>
+    <%= render Tut.SharedView, "key.html", key: key %>
   <% end %>
   </ol>
 
