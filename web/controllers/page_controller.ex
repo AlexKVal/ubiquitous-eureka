@@ -45,4 +45,8 @@ defmodule Tut.PageController do
   def redirect_test(conn, _params) do
     text conn, "It is redirected! Yeah :)"
   end
+
+  def test(conn, _params) do
+    render conn, "test.html"
+  end
 end

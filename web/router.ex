@@ -29,6 +29,8 @@ defmodule Tut.Router do
     get "/redirect", PageController, :redirect_page
     get "/redirect_test", PageController, :redirect_test, as: :redirect_test
 
+    get "/test", PageController, :test
+
     # nested routes
     # "user" one-to-many "posts"
     # resources "/users", UserController do

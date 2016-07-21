@@ -1,2 +1,3 @@
-This is the message: <%= message %>
-I came from assigns: <%= @msg %>
+<div class="jumbotron">
+  <p><%= handler_info @conn %></p>
+</div>
