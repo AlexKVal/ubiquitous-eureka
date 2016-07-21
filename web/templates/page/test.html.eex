@@ -5,7 +5,7 @@
 
   <ol class="list-group">
   <%= for key <- connection_keys @conn do %>
-    <li class="list-group-item"><%= key %></li>
+    <%= render "key.html", key: key %>
   <% end %>
   </ol>
 
