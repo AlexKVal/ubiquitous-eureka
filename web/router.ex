@@ -57,7 +57,7 @@ defmodule Tut.Router do
     # "/users/42/posts?active=true"
 
 
-    # resources "/users", UserController
+    resources "/users", UserController
     #
     # it unfolds to the set of routes:
     #
